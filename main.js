@@ -3,25 +3,10 @@ import { setCookie, getCookie } from './scripts/cookies.js'
 
 //console.log(getCookie('bookmarks'))
 
-reset_bookmarks()
-
 let active_popup = null
 
 let currentmenu = null
 loadmenu('main')
-
-
-
-function reset_bookmarks() {
-    var testing_bookmarks = [
-        {'name':'Youtube','url':'https://youtube.com'},
-        {'name':'Chatgpt','url':'https://chat.openai.com'},
-        //{'name':'Wikipedia','url':'https://wikipedia.org'},
-    ];
-    let json_str = JSON.stringify(testing_bookmarks);
-    console.log(json_str)
-    setCookie('bookmarks', json_str);
-}
 
 function create_bookmark() {
     let name = document.getElementById('bm-nameinput').value
