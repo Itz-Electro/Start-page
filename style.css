@@ -1,0 +1,129 @@
+@font-face {
+    font-family: mplus;
+    src: url(./fonts/MPLUS1-VariableFont_wght.ttf);
+}
+
+:root {
+    --dark: #101010;
+    --lighterdark: #202020;
+    --light: #dadada;
+}
+
+h1 {
+    margin: 0;
+}
+
+input {
+    border-style: none;
+    outline: none;
+    background-color: transparent;
+    font-size:xx-large;
+    font-weight:bold;
+    overflow: auto;
+    color: var(--light);
+}
+
+body {
+    margin: 0;
+    background-color: var(--dark);
+    font-family: mplus;
+    color: var(--light);
+}
+
+header, footer {
+    width: calc(100% - 16px);
+    height: 60px;
+    line-height: 60px;
+    padding-left: 16px;
+    white-space: nowrap;
+    cursor: default;
+}
+
+main {
+    height: calc(100% - 120px);
+}
+
+#options-menu {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.option-seperator {
+    height: 4px;
+    width: 300px;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: var(--light);
+}
+
+.option {
+    height: 60px;
+    padding-right: 50px;
+    width: fit-content;
+    display: flex;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.option-title {
+    top: 6px;
+    position: relative;
+    left: 0px;
+}
+
+.option-selector {
+    top: 6px;
+    position: relative;
+    left: -50px;
+}
+
+
+
+.option:hover .option-title {left: 32;}
+.option:hover .option-selector {left: 16;}
+
+#bm-name {grid-area: title;}
+#bm-nameinput {grid-area: nameinput;}
+#bm-url {grid-area: url;}
+#bm-urlinput {grid-area: urlinput;}
+#bm-cancel {grid-area: cancel;}
+#bm-create {grid-area: create;}
+
+.popup {
+    display: none;
+    position: absolute;
+    left: calc(50% - 150px);
+    top: calc(50% - 200px);
+    border-radius: 20px;
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+    gap: 20px;
+    background-color: var(--lighterdark);
+    grid-template-areas: 
+    'title title'
+    'nameinput nameinput'
+    'url url'
+    'urlinput urlinput'
+    'cancel create'
+    ;
+    grid-template-rows: 50px auto 50px auto 40px;
+}
+
+.active {
+    display: grid;
+}
+
+.popup-button {
+    background-color: var(--dark);
+    border-radius: 12px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: small;
+    cursor: pointer;
+}

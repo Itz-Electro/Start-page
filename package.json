@@ -1,0 +1,11 @@
+{
+  "name": "Custom Start Page",
+  "version": "1.0.0",
+  "description": "My own custom start Page",
+  "main": "index.js",
+  "scripts": {
+    
+  },
+  "author": "Jerry Todd",
+  "license": "ISC"
+}

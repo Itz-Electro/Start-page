@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="main.js" defer></script>
+    <script type="module" src="./scripts/options.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Home</h1>
+    </header>
+    <main>
+        <div id="options-menu">
+            <!--
+            Template for option element:
+            <div class="option">
+                <h1 class="option-selector">></h1>
+                <h1 class="option-title">Template option</h1>
+            </div>
+
+            Template for option sperator:
+            <div class="option-seperator"></div>
+            -->
+        </div>
+    </main>
+    <footer></footer>
+    <div class="popup" id="add-bookmark">
+        <h1 id="bm-name">Bookmark name:</h1>
+        <input id="bm-nameinput" type="text" placeholder="Name here...">
+        <h1 id="bm-url">Url:</h1>
+        <input id="bm-urlinput" type="text" placeholder="URL here...">
+        <div id="bm-cancel" class="popup-button"><h1>Cancel</h1></div>
+        <div id="bm-create" class="popup-button"><h1>Create</h1></div>
+    </div>
+</body>
+<style>
+    .option-title {
+        transition: 0.3s;
+    }
+    .option-selector {
+        transition-delay: 0.3s;
+        transition: 0.4s;
+    }
+</style>
+</html>
