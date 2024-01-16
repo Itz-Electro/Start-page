@@ -2,6 +2,8 @@ import { option, addOptionSeperator } from './scripts/options.js'
 import { setCookie, getCookie } from './scripts/cookies.js'
 
 //console.log(getCookie('bookmarks'))
+const version = 0 
+console.log("Version: " + version)
 
 let active_popup = null
 
