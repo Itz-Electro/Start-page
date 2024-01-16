@@ -40,6 +40,7 @@ const setCookie = (name, json)=>{
     if (result.bookmarks == undefined) {
       result.bookmarks == []
       setCookie("bookmarks", [])
+      console.log('Setting bookmarks to none')
     }
     console.log(result.bookmarks)
 
