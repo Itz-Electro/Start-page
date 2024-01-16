@@ -45,7 +45,7 @@ const setCookie = (name, json)=>{
     console.log(result.bookmarks)
     console.log(result.bookmarks == `"[]"`)
 
-    if (result.bookmarks == `"[]"`) {return []}
+    if (result.bookmarks == `[]`) {return []}
     return JSON.parse(`{"bookmarks":${JSON.parse(result.bookmarks)}}`).bookmarks;
   }
 
