@@ -24,7 +24,8 @@ function create_bookmark() {
 }
 
 function delete_bookmark(name) {
-    let bookmarksList = JSON.parse(getCookie('bookmarks'))
+    if (!confirm(`Delete bookmark: ${name}?`)) {return}
+    let bookmarksList = getCookie('bookmarks')
     let index = bookmarksList.findIndex(obj => obj.name === name);
     if (index !== -1) {
         bookmarksList.splice(index, 1);
