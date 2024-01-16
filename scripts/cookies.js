@@ -43,8 +43,9 @@ const setCookie = (name, json)=>{
       console.log('Setting bookmarks to none')
     }
     console.log(result.bookmarks)
+    console.log(result.bookmarks == `"[]"`)
 
-    if (result.bookmarks.length == 0) {return []}
+    if (result.bookmarks == `"[]"`) {return []}
     return JSON.parse(`{"bookmarks":${JSON.parse(result.bookmarks)}}`).bookmarks;
   }
 
