@@ -26,7 +26,6 @@ const setCookie = (name, json)=>{
     let result = new Array();
     //Get cookie
     cookieValue = document.cookie;
-    console.log(cookieValue)
     //Divide the cookie into an array and convert them to JSON
     if(cookieValue){
       cookieArray = cookieValue.split(';');
@@ -42,8 +41,6 @@ const setCookie = (name, json)=>{
       setCookie("bookmarks", [])
       console.log('Setting bookmarks to none')
     }
-    console.log(result.bookmarks)
-    console.log(result.bookmarks == `"[]"`)
 
     if (result.bookmarks == `[]`) {return []}
     return JSON.parse(`{"bookmarks":${JSON.parse(result.bookmarks)}}`).bookmarks;

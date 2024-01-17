@@ -2,7 +2,8 @@ import { option, addOptionSeperator } from './scripts/options.js'
 import { setCookie, getCookie } from './scripts/cookies.js'
 
 //console.log(getCookie('bookmarks'))
-const version = 1 
+
+const version = 2
 console.log("Version: " + version)
 
 let active_popup = null
@@ -73,31 +74,25 @@ tools
 settings
 */
 
+
+
 function loadmenu(menu) {
     currentmenu=menu
     document.getElementById('options-menu').innerHTML = null
+    const title = (text)=>{document.getElementById('title').textContent = text}
     if ( menu == 'main' ) {
+        title('Home')
         let bookmarks = new option('Bookmarks')
-        let tools = new option('Tools')
-        let settings = new option('Settings')
+
         bookmarks.element.addEventListener('click', () => {
             if (active_popup==null){
                 loadmenu('bookmarks')
             }
         })
-        tools.element.addEventListener('click', () => {
-            if (active_popup==null){
-                loadmenu('tools')
-            }
-        })
-        settings.element.addEventListener('click', () => {
-            if (active_popup==null){
-                loadmenu('settings')
-            }
-        })
         return true
     }
     if ( menu == 'bookmarks' ) {
+        title('Bookmarks')
         let back = new option('Back')
         back.element.addEventListener('click', () => {
             if (active_popup==null){
@@ -115,7 +110,6 @@ function loadmenu(menu) {
 
         let bookmarksList = getCookie('bookmarks')
         //bookmarksList = JSON.parse(`{"bookmarks":${bookmarksList}}`).bookmarks
-        console.log(bookmarksList)
         bookmarksList.forEach(bookmark => {
             bookmark.option = new option(bookmark.name, bookmark.url)
             bookmark.option.element.addEventListener('click', () =>{
