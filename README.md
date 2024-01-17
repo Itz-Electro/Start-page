@@ -1,3 +1,3 @@
 # Custom Start Page
 
-https://Itz-Electro.github.io
+https://itz-electro.github.io/Start-page/
